@@ -3,12 +3,14 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>SIHA - Homepage</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/sockjs-client/sockjs.min.js"></script>
 <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/chatbot/chatstyles.css?v=1.0.0.1">
@@ -16,10 +18,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
 	integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"
 	rel="stylesheet">
 
@@ -70,10 +68,70 @@
 						class="nav-link">Blog</a></li>
 					<li class="nav-item"><a th:href="@{/user/contact}"
 						class="nav-link">Contact</a></li>
+						
+						<li class="nav-item"><a th:href="@{/user/index1}"
+						class="nav-link"> 
+						</a>
+						<noscript>
+		<h2 style="color: #ff0000">Seems your browser doesn't support
+			Javascript! Websocket relies on Javascript being enabled. Please
+			enable Javascript and reload this page!</h2>
+	</noscript>
+
+
+	<div id="main-content" class="container" >
+		<div class="row">
+			<div class="col-md-6">
+				<!-- <form class="form-inline">
+                <div class="form-group">
+                     <label for="connect">WebSocket connection:</label> -->
+				<button id="connect" >
+				<i class="fa-brands fa-rocketchat"></i>
+				</button>
+				<!--  <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+                 <div class="form-group">
+                	<label>Connect to the web socket and it will open a chatbox. 
+                	if after connection you are not able to see that chatbot remove hide code in chatscript.js file</label>
+                </div> 
+            </form> -->
+			</div>
+		</div>
+
+
+
+		<div class="chat-box" style="margin-top: 50px;">
+			<div class="chat-box-header">
+				<div class='app'>
+					<span id="start-record-btn"
+						style='float: left; cursor: pointer; padding-left: 28px;'
+						title="Start Recording"><i class="fa fa-microphone"></i></span>
+				</div>
+				Siha <span class="chat-box-toggle"><i class="fa fa-close" style="font-size:24px"></i>
+			</div>
+			<div class="chat-box-body">
+				<div class="chat-box-overlay"></div>
+				<div class="chat-logs"></div>
+			</div>
+			<div class="chat-input">
+				<form>
+					<input type="text" id="chat-input" placeholder="Send a message..." />
+					<button type="submit" class="chat-submit" id="chat-submit"
+						title="Send Text">
+						<i class="fa fa-send"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+
+
+	</div>
+
+	<script src="/chatbot/chatscript.js?v=1.0.0.1"></script>
 					<li class="nav-item cta"><a class="nav-link"
 						data-toggle="modal" data-target="#modalAppointment"><span>Make
-								an Appointment</span></a></li>
-
+								an Appointment</span></a></li> &nbsp;&nbsp;&nbsp;
 					<li class="nav-item "><form th:action="@{/logout}"
 							method="POST">
 							<button type="submit" class="btn btn-danger">Logout</button>
@@ -86,8 +144,8 @@
 
 	<marquee height="25" width="100%" bgcolor="yellow">
 		<h5>COVID-19 testing is available by appointment at our
-			drive-through site at Emerson Hospital in Concord and through
-			Emerson’s Urgent Care Centers in Littleton and Hudson. Please do not
+			drive-through site at SIHA Hospital in Chennai and through
+			SIHA’s Urgent Care Centers in TAMILNADU. Please do not
 			use our emergency department for routine testing for COVID-19 if you
 			have only been exposed or have mild symptoms</h5>
 	</marquee>
@@ -148,47 +206,114 @@
 							role="tabpanel" aria-labelledby="v-pills-master-tab">
 							<span class="icon mb-3 d-block flaticon-cardiogram"></span>
 							<h2 class="mb-4">Cardiology Department</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-								Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-							<p>Inventore fugit error iure nisi reiciendis fugiat illo
-								pariatur quam sequi quod iusto facilis officiis nobis sit quis
-								molestias asperiores rem, blanditiis! Commodi exercitationem
-								vitae deserunt qui nihil ea, tempore et quam natus quaerat
-								doloremque.</p>
-							<p>
-								<a href="#" class="btn btn-primary">Learn More</a>
-							</p>
+							<p>Cardiology is a branch of medicine dealing with disorders
+								of the heart as well as parts of the circulatory system. The
+								field includes medical diagnosis and treatment of congenital
+								heart defects, coronary artery disease, heart failure, valvular
+								heart disease and electrophysiology.</p>
+							<p>We’ll improve patients’ quality of life after a
+								life-changing event such as a heart attack, heart failure or a
+								heart rhythm disorder.</p>
+							<p>We’ll also be involved in understanding diseases, how they
+								progress and can be prevented.</p>
+							<p>We’ll care for adult patients with conditions such as:</p>
+							<ul>
+								<li>angina (chest pain caused by narrowing of the coronary
+									arteries)</li>
+								<li>arrhythmias (irregular heartbeat)</li>
+								<li><a href="/glossary#Heart_murmurs"
+									title="Abnormal sounds caused by turbulent blood flow within the&amp;nbsp;heart.
+"
+									class="lexicon-term">heart murmurs</a> due to heart valve
+									disease</li>
+								<li>cardiomyopathy (disease of the heart muscle) with heart
+									failure including pulmonary</li>
+								<li><a href="/glossary#Oedema"
+									title="A build up of fluid in the body, causing the affected tissue to become swollen.
+"
+									class="lexicon-term">oedema</a> (accumulation of fluid)</li>
+								<li>coronary artery <a href="/glossary#Thrombosis"
+									title="The formation of a blood clot in the blood vessels or heart.
+"
+									class="lexicon-term">thrombosis</a> or myocardial infarction
+									(heart attack) often associated with high blood pressure (<a
+									href="/glossary#Hypertension"
+									title="Abnormally high blood pressure.
+" class="lexicon-term">hypertension</a>)
+									and high cholesterol
+								</li>
+								<li>diseases of the arteries (atherosclerosis, arteritis,
+									atheroma)</li>
+								<li>hole in the heart and other forms of congenital heart
+									disease</li>
+							</ul>
 						</div>
 
 						<div class="tab-pane fade py-5" id="v-pills-buffet"
 							role="tabpanel" aria-labelledby="v-pills-buffet-tab">
 							<span class="icon mb-3 d-block flaticon-neurology"></span>
 							<h2 class="mb-4">Neurogoly Department</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-								Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-							<p>Inventore fugit error iure nisi reiciendis fugiat illo
-								pariatur quam sequi quod iusto facilis officiis nobis sit quis
-								molestias asperiores rem, blanditiis! Commodi exercitationem
-								vitae deserunt qui nihil ea, tempore et quam natus quaerat
-								doloremque.</p>
-							<p>
-								<a href="#" class="btn btn-primary">Learn More</a>
-							</p>
+							<p>Neurology is the branch of medicine concerned with the
+								study and treatment of disorders of the nervous system. The
+								nervous system is a complex, sophisticated system that regulates
+								and coordinates body activities. It has two major divisions:</p>
+							<ul>
+								<li>Central nervous system: the brain and spinal cord</li>
+								<li>Peripheral nervous system: all other neural elements,
+									such as eyes, ears, skin, and other &quot;sensory
+									receptors&quot;</li>
+							</ul>
+							<p>The neurologist treats disorders that affect the brain,
+								spinal cord, and nerves, such as:</p>
+							<ul>
+								<li>Cerebrovascular disease, such as stroke</li>
+								<li>Demyelinating diseases of the central nervous system,
+									such as multiple sclerosis</li>
+								<li>Headache disorders</li>
+								<li>Infections of the brain and peripheral nervous system</li>
+								<li>Movement disorders, such as Parkinson&#39;s disease</li>
+								<li>Neurodegenerative disorders, such as Alzheimer&#39;s
+									disease, Parkinson&#39;s disease, and Amyotrophic Lateral
+									Sclerosis (Lou Gehrig&#39;s disease)</li>
+							</ul>
+							<ul>
+								<li>Seizure disorders, such as epilepsy</li>
+								<li>Spinal cord disorders</li>
+								<li>Speech and language disorders</li>
+							</ul>
+							<p>Neurologists do not perform surgery. If one of their
+								patients requires surgery, they refer them to a neurosurgeon.</p>
 						</div>
 
 						<div class="tab-pane fade py-5" id="v-pills-fitness"
 							role="tabpanel" aria-labelledby="v-pills-fitness-tab">
 							<span class="icon mb-3 d-block flaticon-stethoscope"></span>
 							<h2 class="mb-4">Diagnostic Department</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-								Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-							<p>Inventore fugit error iure nisi reiciendis fugiat illo
-								pariatur quam sequi quod iusto facilis officiis nobis sit quis
-								molestias asperiores rem, blanditiis! Commodi exercitationem
-								vitae deserunt qui nihil ea, tempore et quam natus quaerat
-								doloremque.</p>
+							<p>Department of Radiology and Imaging Sciences at SIHA
+								Hospital Chennai is dedicated to improving and enhancing patient
+								care in a safe and efficient manner</p>
+							<p>The entire gamut of services include neurologic, head and
+								neck, cardiac, vascular, abdominal, musculoskeletal, pediatric
+								and women’s imaging.</p>
+							<p>Apart from catering to in-patients, the department offers
+								round the clock diagnostic services to other patients as well
+								like a stand-alone radiology Centre.</p>
+							<p>SIHA Radiology & Imaging Department is equipped with
+								state-of-the-art digital technology and equipment to achieve the
+								best possible diagnosis:</p>
 							<p>
-								<a href="#" class="btn btn-primary">Learn More</a>
+								<i class="fa fa-arrow-circle-right icon-orange"
+									aria-hidden="true"></i> &nbsp;Digital and computerized
+								radiography
+							</p>
+							<p>
+								<i class="fa fa-arrow-circle-right icon-orange"
+									aria-hidden="true"></i> &nbsp;3D / 4D Ultrasound and Doppler
+								scanners
+							</p>
+							<p>
+								<i class="fa fa-arrow-circle-right icon-orange"
+									aria-hidden="true"></i> &nbsp;16 Multi-slice CT scanner
 							</p>
 						</div>
 
@@ -196,48 +321,84 @@
 							role="tabpanel" aria-labelledby="v-pills-reception-tab">
 							<span class="icon mb-3 d-block flaticon-tooth"></span>
 							<h2 class="mb-4">Dental Departments</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-								Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-							<p>Inventore fugit error iure nisi reiciendis fugiat illo
-								pariatur quam sequi quod iusto facilis officiis nobis sit quis
-								molestias asperiores rem, blanditiis! Commodi exercitationem
-								vitae deserunt qui nihil ea, tempore et quam natus quaerat
-								doloremque.</p>
-							<p>
-								<a href="#" class="btn btn-primary">Learn More</a>
-							</p>
+							<p>Dental Clinic by SIHA Hospital, which is preferred by many
+								countries, especially in the United States and European
+								countries, has a vision to improve the quality of services
+								internationally with its experienced doctors in their areas of
+								expertise.</p>
+							<p>Preventive dental care is essential to keep your teeth
+								healthy throughout your life by identifying and providing
+								solutions for dental problems early to avoid the risks of
+								developing cavities, enamel loss, or inflammation of gums such
+								as gingivitis, and periodontitis. Routine preventive dental care
+								and good oral health practices will ensure a healthy smile.</p>
 						</div>
 
 						<div class="tab-pane fade py-5" id="v-pills-sea" role="tabpanel"
 							aria-labelledby="v-pills-sea-tab">
 							<span class="icon mb-3 d-block flaticon-vision"></span>
 							<h2 class="mb-4">Ophthalmology Departments</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-								Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-							<p>Inventore fugit error iure nisi reiciendis fugiat illo
-								pariatur quam sequi quod iusto facilis officiis nobis sit quis
-								molestias asperiores rem, blanditiis! Commodi exercitationem
-								vitae deserunt qui nihil ea, tempore et quam natus quaerat
-								doloremque.</p>
-							<p>
-								<a href="#" class="btn btn-primary">Learn More</a>
-							</p>
+							<p>The Department of Ophthalmology was established in 2005
+								with a mission to provide quality eye care to all categories of
+								people with state-of-the-art facilities and to provide
+								exceptional training for under graduate and post graduate
+								students in the field of ophthalmology. A huge area of
+								approximately 14000 square feet has been allocated for
+								Outpatient clinic and wards. The Outpatient clinic is equipped
+								with state-of-the-art ophthalmic equipment for both diagnosis
+								and therapy. A dedicated operation theatre houses high end
+								equipment for cataract and other ophthalmic surgeries. The minor
+								operation room is situated adjacent to outpatient clinic.</p>
+							<p>The commonly treated ophthalmic conditions include
+								conjunctival, corneal diseases,Paediatric ocular disorders,
+								intraocular infections, correction of refractive errors,
+								cataract, eye injuries, removal of foreign
+								bodies,glaucoma,retinal diseases,intraocular inflammations and
+								neuroophthalmic problems.</p>
 						</div>
 
 						<div class="tab-pane fade py-5" id="v-pills-spa" role="tabpanel"
 							aria-labelledby="v-pills-spa-tab">
 							<span class="icon mb-3 d-block flaticon-ambulance"></span>
 							<h2 class="mb-4">Emergency Departments</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-								Nesciunt voluptate, quibusdam sunt iste dolores consequatur</p>
-							<p>Inventore fugit error iure nisi reiciendis fugiat illo
-								pariatur quam sequi quod iusto facilis officiis nobis sit quis
-								molestias asperiores rem, blanditiis! Commodi exercitationem
-								vitae deserunt qui nihil ea, tempore et quam natus quaerat
-								doloremque.</p>
+							<p>EDs have highly trained doctors and other health
+								professionals on site to deal with emergencies. They assess,
+								treat, stabilise and start the health management of people who
+								have come to the ED with a serious illness or injury.</p>
+							<h2>When and why should you visit an ED?</h2>
+							<p>You should go to a hospital ED if you or your child are
+								seriously ill or injured.</p>
 							<p>
-								<a href="#" class="btn btn-primary">Learn More</a>
+								People often <a href="https://canbabieseat.com/" rel="nofollow">take
+									babies or</a> children to public hospital EDs if they become ill
+								suddenly. Many older people go there for urgent attention too.
 							</p>
+							<p>Most people go to EDs with conditions that include:</p>
+							<ul>
+								<li>injuries from <a href="/accidents-and-injuries">accidents</a>,
+									physical assaults or <a href="/falls">falls</a></li>
+								<li><a href="/heart-attack">heart attack</a> and <a
+									href="/stroke">stroke</a></li>
+								<li>severe pain</li>
+								<li>problems with breathing or bleeding</li>
+								<li>broken bones</li>
+								<li>loss of consciousness</li>
+								<li>worsening of a serious illness</li>
+								<li>drug overdoses or <a href="/poisoning">poisoning</a></li>
+								<li><a href="/allergies-and-hypersensitivities">allergic
+										reactions</a></li>
+								<li><a href="/pregnancy-complications">pregnancy
+										complications</a></li>
+								<li><a href="/mental-illness">mental illness</a></li>
+								<li><a href="/burns-and-scalds">burns</a></li>
+							</ul>
+
+							<p>A GP can often deal with minor emergencies such as sprains
+								and strains, bites, stings, viruses, infections, eye injuries
+								and ongoing illness or injury.</p>
+							<p>A pharmacy can help with colds and flu, skin conditions,
+								allergies, headaches, diarrhoea or constipation, or sleeping
+								problems.</p>
 						</div>
 					</div>
 				</div>
@@ -310,7 +471,7 @@
 							<div class="front"
 								style="background-image: url(../images/doctor-1.jpg);">
 								<div class="box">
-									<h2>VAMSI</h2>
+									<h2>KolliparaVamsi</h2>
 									<p>Neurologist</p>
 								</div>
 							</div>
@@ -328,7 +489,7 @@
 											style="background-image: url(../images/doctor-1.jpg);"></div>
 									</div>
 									<div class="name align-self-center">
-										VAMSI <span class="position">Neurologist</span>
+										KolliparaVamsi <span class="position">Neurologist</span>
 									</div>
 								</div>
 							</div>
@@ -342,7 +503,7 @@
 							<div class="front"
 								style="background-image: url(../images/doctor-2.jpg);">
 								<div class="box">
-									<h2>RAJKAMAL</h2>
+									<h2>Rajkamal</h2>
 									<p>Pediatrician</p>
 								</div>
 							</div>
@@ -360,7 +521,7 @@
 											style="background-image: url(../images/doctor-2.jpg);"></div>
 									</div>
 									<div class="name align-self-center">
-										RAJKAMAL <span class="position">Pediatrician</span>
+										Rajkamal <span class="position">Pediatrician</span>
 									</div>
 								</div>
 							</div>
@@ -374,7 +535,7 @@
 							<div class="front"
 								style="background-image: url(../images/doctor-3.jpg);">
 								<div class="box">
-									<h2>LOGABARATHI</h2>
+									<h2>Logabarathi</h2>
 									<p>Ophthalmologist</p>
 								</div>
 							</div>
@@ -392,7 +553,7 @@
 											style="background-image: url(../images/doctor-3.jpg);"></div>
 									</div>
 									<div class="name align-self-center">
-										LOGABARATHI <span class="position">Ophthalmologist</span>
+										Logabarathi <span class="position">Ophthalmologist</span>
 									</div>
 								</div>
 							</div>
@@ -406,7 +567,7 @@
 							<div class="front"
 								style="background-image: url(../images/doctor-4.jpg);">
 								<div class="box">
-									<h2>NAVEENKUMAR</h2>
+									<h2>Naveenkumar</h2>
 									<p>Pulmonologist</p>
 								</div>
 							</div>
@@ -424,7 +585,7 @@
 											style="background-image: url(images/doctor-4.jpg);"></div>
 									</div>
 									<div class="name align-self-center">
-										NAVEENKUMAR <span class="position">Pulmonologist</span>
+										Naveenkumar <span class="position">Pulmonologist</span>
 									</div>
 								</div>
 							</div>
@@ -734,7 +895,7 @@
 			<div class="row mb-5">
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Remedic</h2>
+						<h2 class="ftco-heading-2">SIHA</h2>
 						<p>Far far away, behind the word mountains, far from the
 							countries Vokalia and Consonantia, there live the blind texts.</p>
 						<ul
@@ -779,33 +940,17 @@
 						<div class="block-23 mb-3">
 							<ul>
 								<li><span class="icon icon-map-marker"></span><span
-									class="text">203 Fake St. Mountain View, San Francisco,
-										California, USA</span></li>
+									class="text">203 MCM st, Adayar, Chennai- 600005</span></li>
 								<li><a href="#"><span class="icon icon-phone"></span><span
-										class="text">+2 392 3929 210</span></a></li>
+										class="text">+91 9853543210</span></a></li>
 								<li><a href="#"><span class="icon icon-envelope"></span><span
-										class="text">info@yourdomain.com</span></a></li>
+										class="text">info@siha.com</span></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-
-					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>
-							document.write(new Date().getFullYear());
-						</script>
-						All rights reserved | This template is made with <i
-							class="icon-heart" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-			</div>
+			
 		</div>
 	</footer>
 
@@ -869,11 +1014,11 @@
 						<div class="form-group">
 							<label for="appointment_message" class="text-black">Message</label>
 							<textarea th:field="*{description}" id="appointment_message"
-								class="form-control" cols="30" rows="10"></textarea>
+								class="form-control" cols="15" rows="5"></textarea>
 						</div>
 
-						<div class="form-group">
-							<input type="submit" value="Send Message" class="btn btn-primary">
+						<div class="form-group" align="center">
+							<input type="submit" value="Book" class="btn btn-primary">
 						</div>
 					</form>
 				</div>
